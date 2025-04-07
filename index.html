@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIDA 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="left-header">
+            <img src="220px-Anna_University_Logo.svg1_.png" alt="Logo" class="logo">
+            <h2>University College of Engineering, BIT Campus  
+              <small>Tiruchirappalli</small>
+            </h2>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </header>
+
+    <nav id="navMenu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Call for Papers</a></li>
+            <li><a href="#">Speakers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+    <main class="hero-section">
+        <img src="1000079330.jpg" alt="UCEBIT" class="hero-img">
+        <div class="hero-text">
+            <h1>GAIDA 2025</h1>
+            <p>International Conference on Green AI, Data, and Innovation</p>
+            <p>20<sup>th</sup> and 21<sup>st</sup> August</p>
+            <form method="get" action="brochure.pdf">
+                <button type="submit" class="brochure-btn">Download Brochure</button>
+            </form>
+        </div>
+    </main>
+
+    <h1>About the Conference</h1>
+    <p>The International Conference on Generative AI and Data Analytics: Exploring a Smarter Future (GAIDA 2025) aims to bring together global experts, researchers, academicians, and professionals to exchange insights on the latest innovations in Generative AI and Data Analytics. Scheduled for 20th and 21st August 2025 at the University College of Engineering, BIT Campus, Tiruchirappalli, the conference provides a platform for showcasing cutting-edge research, fostering interdisciplinary collaboration, and exploring impactful solutions across industries. With keynote speakers from premier institutions worldwide and sessions covering diverse themes like AI in healthcare, cybersecurity, IoT, and sustainability, GAIDA 2025 seeks to drive academic excellence and real-world innovation in emerging technologies.</p>
+
+    <section class="timeline-section">
+        <h1>Important Dates</h1>
+        <div class="timeline-container">
+            <div class="timeline-event" data-date="2024-12-15">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="timeline-box">
+                    <h3>Call for Papers</h3>
+                    <p>15th December 2024</p>
+                </div>
+            </div>
+            <div class="timeline-event" data-date="2025-04-30">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="timeline-box">
+                    <h3>Paper Submission Deadline</h3>
+                    <p>30th April 2025</p>
+                </div>
+            </div>
+            <div class="timeline-event" data-date="2025-06-15">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="timeline-box">
+                    <h3>Notification of Acceptance</h3>
+                    <p>15th June 2025</p>
+                </div>
+            </div>
+            <div class="timeline-event" data-date="2025-07-15">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="timeline-box">
+                    <h3>Last Date for Registration</h3>
+                    <p>15th July 2025</p>
+                </div>
+            </div>
+            <div class="timeline-event" data-date="2025-08-20">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="timeline-box">
+                    <h3>Conference Dates</h3>
+                    <p>20th & 21st August 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+
+            document.querySelectorAll('.timeline-event').forEach(event => {
+                const dateStr = event.getAttribute('data-date');
+                const eventDate = new Date(dateStr);
+
+                if (eventDate < today) {
+                    event.classList.add('past');
+                } else {
+                    event.classList.add('upcoming');
+                }
+            });
+        });
+    </script>
+
+    <footer>
+    </footer>
+</body>
+</html>
