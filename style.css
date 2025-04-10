@@ -5,17 +5,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
-  padding-top: 70px; /* For fixed header space */
+  padding-top: 70px;
 }
 
 /* Header */
 header {
-  background-color: #163861;
+  background-color: #e67e22;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -55,37 +59,54 @@ header h2 small {
 
 /* Nav Menu */
 #navMenu {
-  background-color: #163861;
+  background-color: #e67e22;
   display: none;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1;
+  height: 100vh;
+  z-index: 2000;
+  padding-top: 60px;
+  overflow-y: auto;
 }
 
 #navMenu.show {
   display: block;
 }
 
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
 #navMenu ul {
   list-style: none;
-  padding: 10px 0;
-  text-align: left;
   padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80%;
 }
 
 #navMenu ul li {
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 #navMenu ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
 #navMenu ul li a:hover {
-  color: #ffcc00;
+  color: #fff3e0;
 }
 
 /* Hero Section */
@@ -132,32 +153,51 @@ header h2 small {
 .brochure-btn {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #163861;
-  color: #ffff;
+  background-color: #e67e22;
+  color: #fff;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .brochure-btn:hover {
-  background-color: #0d1c2d;
+  background-color: #d35400;
 }
 
-/* About Section */
+/* General Section Styles */
+section {
+  padding: 40px 20px;
+  min-height: 100px;
+}
+
 h1 {
   text-align: center;
   margin: 40px 0 10px;
   font-size: 2rem;
 }
 
-p {
+h2 {
+  text-align: center;
+  margin: 20px 0 10px;
+  font-size: 1.5rem;
+}
+
+p, ul {
   max-width: 900px;
   margin: 0 auto 30px;
   padding: 0 20px;
   font-size: 1rem;
+}
+
+ul {
+  list-style: disc inside;
+}
+
+/* Call for Papers Section */
+.call-for-papers-section {
+  background-color: #e9f1f7;
 }
 
 /* Timeline Section */
@@ -202,73 +242,94 @@ p {
   max-width: 300px;
 }
 
+/* Only past (ended) events get the orange color */
+.timeline-event.past {
+  background-color: #e67e22;
+  color: #fff;
+  border-radius: 10px;
+}
+
 .timeline-event.past .timeline-icon,
 .timeline-event.past .timeline-box {
-  background-color: #004b84;
+  background-color: #e67e22;
   color: #fff;
 }
 
-.timeline-event.upcoming .timeline-icon {
+/* Upcoming events remain default */
+.timeline-event:not(.past) .timeline-icon {
   background-color: #999;
 }
 
-.timeline-event.ended .timeline-icon {
-  background-color: #ffffff;
+/* Keynote Speakers Section */
+.keynote-section {
+  background-color: #fff;
 }
 
+.speakers-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 20px auto;
+}
 
-/* Footer Placeholder */
+.speaker-card {
+  background-color: #e67e22;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Registration Section */
+.registration-section table {
+  max-width: 600px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+.registration-section th, .registration-section td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.registration-section th {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+/* Footer */
 footer {
   margin-top: 40px;
   padding: 20px;
-  background-color: #163861;
+  background-color: #e67e22;
   color: white;
   text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .brochure-btn {
-    font-size: 1rem;
-    padding: 8px 16px;
-  }
-
-  header h2 {
-    font-size: 16px;
-  }
-
-  header h2 small {
-    font-size: 11px;
-  }
+  .hero-text h1 { font-size: 2rem; }
+  .hero-text p { font-size: 1rem; }
+  .brochure-btn { font-size: 1rem; padding: 8px 16px; }
+  header h2 { font-size: 16px; }
+  header h2 small { font-size: 11px; }
+  .timeline-box { max-width: 250px; }
+  .speaker-card { width: 100%; max-width: 300px; }
+  #navMenu ul li a { font-size: 16px; }
 }
 
 @media (max-width: 460px) {
-  .hero-text {
-    padding: 15px;
-  }
-
-  .hamburger {
-    font-size: 24px;
-  }
-
-  .logo {
-    height: 40px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .timeline-box {
-    max-width: 250px;
-    padding: 12px 16px;
-  }
+  .hero-text { padding: 15px; }
+  .hamburger { font-size: 24px; }
+  .logo { height: 40px; }
+  .hero-text h1 { font-size: 1.5rem; }
+  .timeline-box { max-width: 200px; padding: 12px 16px; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.2rem; }
+  p, ul { font-size: 0.9rem; }
 }

@@ -5,41 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAIDA 2025</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="left-header">
             <img src="220px-Anna_University_Logo.svg1_.png" alt="Logo" class="logo">
             <h2>University College of Engineering, BIT Campus  
-              <small>Tiruchirappalli</small>
+              <smaller>Tiruchirappalli</small>
             </h2>
         </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            &#9776;
-        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
     </header>
 
     <nav id="navMenu">
+        <div class="close-btn" onclick="toggleMenu()">✖</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Call for Papers</a></li>
-            <li><a href="#">Speakers</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about-college" onclick="toggleMenu()">About the College</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About GAIDA</a></li>
+            <li><a href="#about-dept" onclick="toggleMenu()">About the Department</a></li>
+            <li><a href="#call-for-papers" onclick="toggleMenu()">Call for Papers</a></li>
+            <li><a href="#important-dates" onclick="toggleMenu()">Important Dates</a></li>
+            <li><a href="#keynote-speakers" onclick="toggleMenu()">Keynote Speakers</a></li>
+            <li><a href="#registration" onclick="toggleMenu()">Registration</a></li>
+            <li><a href="#organizing-committee" onclick="toggleMenu()">Organizing Committee</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('show');
-        }
-    </script>
-
-    <main class="hero-section">
+    <main class="hero-section" id="home">
         <img src="1000079330.jpg" alt="UCEBIT" class="hero-img">
         <div class="hero-text">
             <h1>GAIDA 2025</h1>
-            <p>International Conference on Green AI, Data, and Innovation</p>
+            <p>International Conference on Generative AI and Data Analytics</p>
             <p>20<sup>th</sup> and 21<sup>st</sup> August</p>
             <form method="get" action="brochure.pdf">
                 <button type="submit" class="brochure-btn">Download Brochure</button>
@@ -47,23 +46,55 @@
         </div>
     </main>
 
-    <h1>About the Conference</h1>
-    <p>The International Conference on Generative AI and Data Analytics: Exploring a Smarter Future (GAIDA 2025) aims to bring together global experts, researchers, academicians, and professionals to exchange insights on the latest innovations in Generative AI and Data Analytics. Scheduled for 20th and 21st August 2025 at the University College of Engineering, BIT Campus, Tiruchirappalli, the conference provides a platform for showcasing cutting-edge research, fostering interdisciplinary collaboration, and exploring impactful solutions across industries. With keynote speakers from premier institutions worldwide and sessions covering diverse themes like AI in healthcare, cybersecurity, IoT, and sustainability, GAIDA 2025 seeks to drive academic excellence and real-world innovation in emerging technologies.</p>
+    <section id="about-college" class="about-section">
+        <h1>About the College</h1>
+        <p>University College of Engineering, BIT Campus, Tiruchirappalli, is a constituent college of Anna University, Chennai. Established to provide quality technical education, it offers a range of undergraduate, postgraduate, and doctoral programs in engineering and technology. The college is renowned for its strong academic foundation, cutting-edge research, and industry collaborations. Located in Tiruchirappalli, Tamil Nadu, it benefits from a vibrant academic ecosystem and contributes significantly to the region's technological and entrepreneurial growth through initiatives like the EDII-Anna Business Incubation Research Foundation and the EDII-Tiruchirappalli Hub, supported by the Government of Tamil Nadu.</p>
+    </section>
 
-    <section class="timeline-section">
+    <section id="about" class="about-section">
+        <h1>About GAIDA 2025</h1>
+        <p>The institution aims to foster partnerships with industries and academic institutes to provide quality education and support entrepreneurial development through initiatives like the EDII-Anna Business Incubation Research Foundation (a section 8, Not-for-Profit Company) and the EDII-Academic Innovation & Entrepreneurship Development Programme Hub (EDII-Tiruchirappalli Hub), funded by the Government of Tamil Nadu. The Department of Computer Science and Engineering at UCE, BIT Campus, Tiruchirappalli, is organizing a two-day International Conference on "Generative AI and Data Analytics: Exploring a Smarter Future (GAIDA 2025)" on 12th and 13th March 2025. This event aims to bring together global experts, researchers, and professionals to explore the latest advancements in Generative AI and Data Analytics.</p>
+    </section>
+
+    <section id="about-dept" class="about-section">
+        <h1>About the Department</h1>
+        <p>The Department of Computer Science and Engineering at UCE, BIT Campus is dedicated to nurturing skilled technocrats through its undergraduate and postgraduate programs, alongside offering research opportunities in cutting-edge areas such as image processing, text mining, data mining, wireless sensor networks, and network security. The department has a commendable record of securing research funding, with three projects amounting to Rs.48.93 lakhs, supported by agencies like UGC, AICTE, and the Ministry of IT. Strong industry collaboration is a hallmark of the department, highlighted by MOUs with leading organizations such as CISCO, CDAC, and ICT Academy. It has further enhanced its laboratory facilities with resources provided by Microsoft, Oracle, and IBM. The department regularly organizes impactful events, including conferences, workshops, and seminars.</p>
+    </section>
+
+    <section id="call-for-papers" class="call-for-papers-section">
+        <h1>Call for Papers</h1>
+        <p>We invite original and unpublished research papers presenting innovative ideas on a wide range of topics including but not limited to:</p>
+        <ul>
+            <li>Advances in Generative AI: Cutting-edge developments in GANs, VAEs, and AI for explainability.</li>
+            <li>Applications across Industries: Generative AI in Healthcare, Finance, Design, and E-commerce.</li>
+            <li>Data Analytics and Decision Making: Predictive Analytics, Ethics in AI, and Customer Behaviour Insights.</li>
+            <li>Generative AI in Security: Privacy Enhancements, Cybersecurity Applications, and Quantum Security.</li>
+            <li>IoT and Edge Computing: Analytics for IoT, Edge AI, and Data Management.</li>
+            <li>Sustainability and Social Impact: AI for Climate Change, Green Energy, and Accessibility Technologies.</li>
+        </ul>
+        <p>Accepted papers will be published in indexed journals and presented during the conference sessions. A proposal has been submitted to Springer for possible publication of selected articles in Springer Nature Conference Proceedings (Scopus Indexed).</p>
+        <h2>Submission Guidelines</h2>
+        <ul>
+            <li>Paper must follow the standard format.</li>
+            <li>Maximum Length: 200 words (abstract).</li>
+            <li>Submission Deadline: 20th December 2024.</li>
+        </ul>
+    </section>
+
+    <section id="important-dates" class="timeline-section">
         <h1>Important Dates</h1>
         <div class="timeline-container">
-            <div class="timeline-event" data-date="2024-12-15">
+            <div class="timeline-event" data-date="2024-04-15">
                 <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
                 <div class="timeline-box">
-                    <h3>Call for Papers</h3>
-                    <p>15th December 2024</p>
+                    <h3>Registration</h3>
+                    <p>20th December 2024</p>
                 </div>
             </div>
             <div class="timeline-event" data-date="2025-04-30">
                 <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
                 <div class="timeline-box">
-                    <h3>Paper Submission Deadline</h3>
+                    <h3>Full Paper Submission</h3>
                     <p>30th April 2025</p>
                 </div>
             </div>
@@ -91,24 +122,82 @@
         </div>
     </section>
 
+    <section id="keynote-speakers" class="keynote-section">
+        <h1>Keynote Speakers</h1>
+        <div class="speakers-container">
+            <div class="speaker-card">
+                <h3>International Speakers</h3>
+                <p>Speakers from USA, Australia, Denmark, Italy, and Russia have confirmed participation.</p>
+            </div>
+            <div class="speaker-card">
+                <h3>National Experts</h3>
+                <p>Leading experts from India will also join the conference.</p>
+            </div>
+        </div>
+        <p>Stay tuned for the full list of speakers!</p>
+    </section>
+
+    <section id="registration" class="registration-section">
+        <h1>Registration Fee Details</h1>
+        <table>
+            <tr><th>Category</th><th>Fee</th></tr>
+            <tr><td>Students / Research Scholars</td><td>Rs. 3000</td></tr>
+            <tr><td>Faculty Members</td><td>Rs. 3000</td></tr>
+            <tr><td>Industrial Participants</td><td>Rs. 3500</td></tr>
+            <tr><td>International Participants</td><td>US $300</td></tr>
+        </table>
+        <p>All registration fees should be remitted to the Karur Vysya Bank Account No. 1602115000000202 (IFSC Code: KVBL0001602) through online payment only.</p>
+        <h2>Accommodations</h2>
+        <p>Limited accommodations are available in the college hostel on a payment basis.</p>
+    </section>
+
+    <section id="organizing-committee" class="committee-section">
+        <h1>Organizing Committee</h1>
+        <h2>Chief Patron</h2>
+        <p>Dr. K. Gopal I.A.S., Additional Chief Secretary, Higher Education Department, Govt. of Tamil Nadu</p>
+        <p>Mr. T. Abraham I.A.S., Commissioner of Technical Education, DoTE, Govt. of Tamil Nadu</p>
+        <p>Dr. S. Usa, Professor and Chair Person, Faculty of Electrical and Electronics Engineering, Anna University, Chennai</p>
+        <h2>Patron</h2>
+        <p>Prof. J. Prakash, Registrar, Anna University, Chennai</p>
+        <h2>Convener</h2>
+        <p>Prof. P. Hariharan, Director (CCC), Anna University, Chennai</p>
+        <h2>Organizing Secretaries</h2>
+        <p>Prof. T. Senthilkumar, Dean, UCE - BIT Campus</p>
+        <p>Dr. G. Annapoorani, Head of the Department, Computer Science and Engineering & Information Technology</p>
+        <h2>Joint Secretaries</h2>
+        <p>Dr. S. Senthil Kumar, Department of Computer Science and Engineering</p>
+        <p>Dr. R. Arunprakash, Assistant Professor, Department of Computer Science and Engineering</p>
+        <h2>Members</h2>
+        <p>Dr. E. Katharan (and others - full list TBD)</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h1>Contact</h1>
+        <p>(Contact information to be added.)</p>
+    </section>
+
+    <footer>
+        <p>© 2025 GAIDA Conference</p>
+    </footer>
+
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('show');
+            hamburger.textContent = menu.classList.contains('show') ? '' : '☰';
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             const today = new Date();
-
             document.querySelectorAll('.timeline-event').forEach(event => {
                 const dateStr = event.getAttribute('data-date');
                 const eventDate = new Date(dateStr);
-
                 if (eventDate < today) {
                     event.classList.add('past');
-                } else {
-                    event.classList.add('upcoming');
                 }
             });
         });
     </script>
-
-    <footer>
-    </footer>
 </body>
 </html>
