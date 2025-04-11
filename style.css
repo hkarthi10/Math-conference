@@ -5,18 +5,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  padding-top: 70px;
-}
-
 /* Header */
 header {
   background-color: #e67e22;
@@ -38,23 +26,196 @@ header {
 }
 
 .logo {
-  height: 50px;
+  height: 100px; /* Pretty big logo for desktop */
+  width: auto; /* Maintain aspect ratio */
 }
 
-header h2 {
-  font-size: 18px;
-  margin: 0;
+.header-text {
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+  text-align: left; /* Ensure left alignment */
 }
 
-header h2 small {
-  display: block;
-  font-size: 12px;
-  color: #ddd;
+.header-text h2 {
+  font-size: 16px; /* Consistent font size */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove any padding */
+  line-height: 1; /* Remove line gap by setting line-height to 1 */
+  color: #fff;
 }
 
+/* Hamburger */
 .hamburger {
   font-size: 28px;
   cursor: pointer;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .left-header {
+    gap: 8px;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .header-text h2 {
+    font-size: 14px; /* Smaller for mobile */
+    line-height: 1; /* Maintain no gap */
+  }
+
+  .hamburger {
+    font-size: 24px;
+  }
+
+  /* Hero Section adjustments for mobile */
+  .hero-section {
+    height: 60vh; /* Reduced height to fit content within image */
+    position: relative;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6); /* Stronger black background for readability */
+    padding: 15px; /* Increased padding for better spacing */
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 85%; /* Slightly reduced to avoid edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Added shadow for contrast */
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem; /* Larger, more readable title */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability */
+  }
+
+  .hero-text p {
+    font-size: 1.3rem; /* Larger, more readable text */
+    margin: 5px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+  }
+
+  .brochure-btn {
+    margin-top: 15px;
+    padding: 12px 25px; /* Larger padding for better touch target */
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.2rem; /* Larger, more readable button text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+  }
+
+  .brochure-btn:hover {
+    background-color: #d35400;
+  }
+}
+
+@media (max-width: 460px) {
+  .left-header {
+    gap: 6px;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .header-text h2 {
+    font-size: 12px; /* Smallest size for readability */
+    line-height: 1; /* Maintain no gap */
+  }
+
+  .hamburger {
+    font-size: 22px;
+  }
+
+  /* Hero Section adjustments for smaller mobile */
+  .hero-section {
+    height: 50vh; /* Further reduced height */
+    position: relative;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7); /* Even stronger black background */
+    padding: 12px; /* Adjusted padding */
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 90%; /* Adjusted to fit smaller screens */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-text h1 {
+    font-size: 2rem; /* Still readable but smaller for tiny screens */
+    margin-bottom: 8px;
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.9);
+  }
+
+  .hero-text p {
+    font-size: 1.1rem; /* Readable size for small screens */
+    margin: 4px 0;
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.9);
+  }
+
+  .brochure-btn {
+    margin-top: 12px;
+    padding: 10px 20px; /* Adjusted for touch */
+    background-color: #e67e22;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1.1rem; /* Readable button text */
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.9);
+  }
+
+  .brochure-btn:hover {
+    background-color: #d35400;
+  }
+}
+
+/* Rest of the CSS (unchanged, included for completeness) */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding-top: 70px;
 }
 
 /* Nav Menu */
@@ -129,7 +290,7 @@ header h2 small {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(125, 217, 248, 0.302);
+  background: rgba(67, 206, 253, 0.723);
   padding: 10px;
   color: white;
   text-align: center;
@@ -140,13 +301,13 @@ header h2 small {
 .hero-text h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
 }
 
 .hero-text p {
   font-size: 1.2rem;
   margin: 5px 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Brochure Button */
@@ -160,6 +321,7 @@ header h2 small {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
 }
 
 .brochure-btn:hover {
@@ -316,28 +478,4 @@ footer {
   background-color: #e67e22;
   color: white;
   text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-text h1 { font-size: 2rem; }
-  .hero-text p { font-size: 1rem; }
-  .brochure-btn { font-size: 1rem; padding: 8px 16px; }
-  header h2 { font-size: 16px; }
-  header h2 small { font-size: 11px; }
-  .timeline-box { max-width: 250px; }
-  .speaker-card { width: 100%; max-width: 300px; }
-  #navMenu ul li a { font-size: 16px; }
-}
-
-@media (max-width: 460px) {
-  .hero-text { padding: 15px; }
-  .hamburger { font-size: 24px; }
-  .logo { height: 40px; }
-  .hero-text h1 { font-size: 1.5rem; }
-  .timeline-box { max-width: 200px; padding: 12px 16px; }
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.2rem; }
-  p, ul { font-size: 0.9rem; }
-  .speaker-image { width: 120px; height: 120px; }
 }
