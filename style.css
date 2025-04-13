@@ -60,9 +60,11 @@ header {
     height: 80px;
   }
 
+
   .header-text h2 {
     font-size: 14px; /* Smaller for mobile */
     line-height: 1; /* Maintain no gap */
+    text-align: center;
   }
 
   .hamburger {
@@ -140,6 +142,7 @@ header {
   .header-text h2 {
     font-size: 12px; /* Smallest size for readability */
     line-height: 1; /* Maintain no gap */
+    text-align: center;
   }
 
   .hamburger {
