@@ -33,7 +33,7 @@ header {
 .header-text {
   display: flex;
   flex-direction: column; /* Stack text vertically */
-  text-align: left; /* Ensure left alignment */
+  text-align: center; /* Center the text within header */
 }
 
 .header-text h2 {
@@ -59,7 +59,6 @@ header {
   .logo {
     height: 80px;
   }
-
 
   .header-text h2 {
     font-size: 14px; /* Smaller for mobile */
@@ -341,6 +340,18 @@ h1 {
   text-align: center;
   margin: 40px 0 10px;
   font-size: 2rem;
+}
+
+/* Specific heading colors for requested sections */
+#about-college h1,
+#about-dept h1,
+#about h1,
+#call-for-papers h1,
+#important-dates h1,
+#keynote-speakers h1,
+#registration h1,
+#organizing-committee h1 {
+  color: #e67e22; /* Orange color for specified headings */
 }
 
 h2 {
