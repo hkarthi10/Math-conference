@@ -95,7 +95,7 @@ body {
 .field-btn {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: left; /* Updated from 'space-between' to 'left' as per your change */
   padding: 10px 15px;
   background-color: #e0f7fa;
   border: none;
